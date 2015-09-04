@@ -1,0 +1,7 @@
+<launch>
+  <node name="pickIn" pkg="perception_to_robot" type="perception_to_robot_node" respawn="false" output="screen">
+	<param name="input_pcl_topic" value="/pose_estimate_ASTAR/objectPoints"/>
+    <param name="goal" value="start" />
+	<param name="output_topic" value="/robot/move/command"/>
+  </node>
+</launch>

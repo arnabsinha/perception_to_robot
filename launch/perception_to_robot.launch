@@ -1,0 +1,19 @@
+<launch>
+  <group ns="pickIn">
+  <node name="pickIn" pkg="perception_to_robot" type="perception_to_robot_node" respawn="false" output="screen">
+	<param name="input_pcl_topic" value="/pickIn/pose_estimate_ASTAR/objectPoints"/>
+    <param name="goal" value="start" />
+	<param name="output_topic" value="/robot/move/command"/>
+	<param name="output_pcl_topic" value="/pickIn/robot/move/command"/>
+  </node>
+  </group>
+  <group ns="holder">
+  <node name="holder" pkg="perception_to_robot" type="perception_to_robot_node" respawn="false" output="screen">
+	<param name="input_pcl_topic" value="/holder/pose_estimate_ASTAR/objectPoints"/>
+    <param name="goal" value="end" />
+	<param name="output_topic" value="/robot/move/command"/>
+	<param name="output_pcl_topic" value="/holder/robot/move/command"/>
+  </node>
+  </group>
+
+</launch>
